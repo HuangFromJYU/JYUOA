@@ -1,0 +1,29 @@
+<html>
+	<body>
+		<textarea name="content"></textarea>
+		<input type="button" onclick="getContent()" value="Get content"/>
+		<input type="button" onclick="getContent2()" value="Get content"/>
+
+		<script type="text/javascript" src="fckeditor.js"></script>
+		<script type="text/javascript">
+			var editor = new FCKeditor('content');
+			editor.BasePath="./";
+			//editor.ToolbarSet= "jyuForum"; //"simple";
+			editor.Width="100%";
+			editor.Config['EnableAdvanceTable'] = false;
+			//editor.Config['SkinPath'] = "editor/skins/silver/";
+			//editor.Create();
+			editor.ReplaceTextarea();
+
+			function getContent(){
+				var oEditor = FCKeditorAPI.GetInstance("content");
+				alert(oEditor.GetXHTML(true));
+			}
+
+			function getContent2(){
+				var oEditor = FCKeditorAPI.GetInstance("content");
+				alert(oEditor.GetXHTML(false));
+			}
+		</script>
+	</body>
+</html>

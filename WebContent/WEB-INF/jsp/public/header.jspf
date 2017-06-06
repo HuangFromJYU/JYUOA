@@ -1,0 +1,46 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" src="${pageContext.request.contextPath}/script/jquery.js"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/script/pageCommon.js" charset="utf-8"></script>
+<script language="javascript" src="${pageContext.request.contextPath}/script/PageUtils.js" charset="utf-8"></script>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css" />
+
+<!-- 导入jquery.validate验证插件的js文件 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/script/jquery_validate/jquery.metadata.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/script/jquery_validate/jquery.validate.js"></script>
+
+<!-- 指定某表单要进行验证，成功能才能提交，不通过就不能提交 -->	
+<script type="text/javascript">
+
+	jQuery.extend(jQuery.validator.messages, {
+	    required: "请填写本字段",
+	    remote: "验证失败",
+	    email: "请输入正确的电子邮件",
+	    url: "请输入正确的网址",
+	    date: "请输入正确的日期",
+	    dateISO: "请输入正确的日期 (ISO).",
+	    number: "请输入正确的数字",
+	    digits: "请输入正确的整数",
+	    creditcard: "请输入正确的信用卡号",
+	    equalTo: "请再次输入相同的值",
+	    accept: "请输入指定的后缀名的字符串",
+	    maxlength: jQuery.validator.format("允许的最大长度为 {0} 个字符"),
+	    minlength: jQuery.validator.format("允许的最小长度为 {0} 个字符"),
+	    rangelength: jQuery.validator.format("允许的长度为{0}和{1}之间"),
+	    range: jQuery.validator.format("请输入介于 {0} 和 {1} 之间的值"),
+	    max: jQuery.validator.format("请输入一个最大为 {0} 的值"),
+	    min: jQuery.validator.format("请输入一个最小为 {0} 的值")
+	});
+	
+	$(function(){
+		$("form").validate();
+	});
+</script>
+
+<style type="text/css">
+	label.error{
+		font-weight: bold;
+	}
+</style>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="10,9" size="180,71">
+    <action name="Test" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="test.jsp" />
+      </result>
+    </action>
+    <action name="role_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="setPrivilegeUI">
+        <resourceEdge source="setPrivilegeUI" routing="0" target="setPrivilegeUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="department_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="user_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="loginout_*" location="0,0" size="0,0">
+      <result name="logout">
+        <resourceEdge source="logout" routing="0" target="logout.jsp" />
+      </result>
+      <result name="toHome">
+        <resourceEdge source="toHome" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="home_*" location="0,0" size="0,0">
+      <result name="{1}">
+        <resourceEdge source="{1}" routing="0" target="{1}.jsp" />
+      </result>
+    </action>
+    <action name="forumManage_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+    </action>
+    <action name="forum_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="show">
+        <resourceEdge source="show" routing="0" target="show.jsp" />
+      </result>
+    </action>
+    <action name="topic_*" location="0,0" size="0,0">
+      <result name="show">
+        <resourceEdge source="show" routing="0" target="show.jsp" />
+      </result>
+      <result name="addUI">
+        <resourceEdge source="addUI" routing="0" target="addUI.jsp" />
+      </result>
+      <result name="toShow" />
+    </action>
+    <action name="reply_*" location="0,0" size="0,0">
+      <result name="addUI">
+        <resourceEdge source="addUI" routing="0" target="addUI.jsp" />
+      </result>
+      <result name="toTopicShow" />
+    </action>
+    <action name="processDefinition_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="addUI">
+        <resourceEdge source="addUI" routing="0" target="addUI.jsp" />
+      </result>
+      <result name="toList" />
+      <result name="showProcessImage" />
+    </action>
+    <action name="template_*" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="list.jsp" />
+      </result>
+      <result name="saveUI">
+        <resourceEdge source="saveUI" routing="0" target="saveUI.jsp" />
+      </result>
+      <result name="toList" />
+      <result name="download" />
+    </action>
+  </package>
+  <webResource name="test.jsp" path="/test.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/roleAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="addUI.jsp" path="/WEB-INF/jsp/roleAction/addUI.jsp" location="0,0" size="0,0" />
+  <webResource name="editUI.jsp" path="/WEB-INF/jsp/roleAction/editUI.jsp" location="0,0" size="0,0" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/roleAction/saveUI.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/departmentAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/departmentAction/saveUI.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/userAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/userAction/saveUI.jsp" location="0,0" size="0,0" />
+  <webResource name="setPrivilegeUI.jsp" path="/WEB-INF/jsp/roleAction/setPrivilegeUI.jsp" location="0,0" size="0,0" />
+  <webResource name="loginUI.jsp" path="/WEB-INF/jsp/loginoutAction/loginUI.jsp" location="0,0" size="0,0" />
+  <webResource name="logout.jsp" path="/WEB-INF/jsp/loginoutAction/logout.jsp" location="0,0" size="0,0" />
+  <webResource name="index.jsp" path="/index.jsp" location="0,0" size="0,0" />
+  <webResource name="{1}.jsp" path="/WEB-INF/jsp/homeAction/{1}.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/forumManageAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/forumManageAction/saveUI.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/forumAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="show.jsp" path="/WEB-INF/jsp/forumAction/show.jsp" location="0,0" size="0,0" />
+  <webResource name="show.jsp" path="/WEB-INF/jsp/topicAction/show.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/topicAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="addUI.jsp" path="/WEB-INF/jsp/replyAction/addUI.jsp" location="0,0" size="0,0" />
+  <webResource name="addUI.jsp" path="/WEB-INF/jsp/topicAction/addUI.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/processDefinitionAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="addUI.jsp" path="/WEB-INF/jsp/processDefinitionAction/addUI.jsp" location="0,0" size="0,0" />
+  <webResource name="list.jsp" path="/WEB-INF/jsp/templateAction/list.jsp" location="0,0" size="0,0" />
+  <webResource name="saveUI.jsp" path="/WEB-INF/jsp/templateAction/saveUI.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.oa.domain">
+
+	<class name="Application" table="jyu_application">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="title" column="title"></property>
+		<property name="applyTime" column="applyTime" type="timestamp"></property>
+		<property name="path" column="path"></property>
+		<property name="status" column="status"></property>
+		
+		
+		<!-- template属性，表示我与Template的多对一 -->
+		<many-to-one name="template" class="Template" column="templateId"></many-to-one>
+
+
+		<!-- approveInfos属性，表示我与ApproveInfo的一对多 -->
+		<set name="approveInfos">
+			<key column="applicationId"></key>
+			<one-to-many class="ApproveInfo"/>
+		</set>
+
+
+		<!-- applicant属性，表示我与User的多对一 -->
+		<many-to-one name="applicant" class="User" column="applicantId"></many-to-one>
+		
+	</class>
+	
+</hibernate-mapping>

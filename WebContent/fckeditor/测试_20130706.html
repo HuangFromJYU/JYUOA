@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		
+		<!-- 1，导入js文件 -->
+		<script type="text/javascript" src="fckeditor.js"></script>
+
+		
+	</head>
+	<body>
+
+		<!-- 2，显示文本域 -->
+		<form action="">
+			<textarea name="content">abcd</textarea>
+		
+			<!-- 3，显示为FCKeditor -->
+			<script type="text/javascript">
+				var oFCKeditor = new FCKeditor( 'content' ) ; // 参数就是提交表单时的参数名
+				
+				// 必须要指定的属性。
+				//用于指定fckeditor的核心文件的存放路径（editor文件夹所在的路径）。
+				// 要求一定要以'/'结尾。
+				oFCKeditor.BasePath	= "./"; 
+
+				// 一些配置
+				oFCKeditor.Height	= 300 ;
+				oFCKeditor.Width	= 700 ;
+				oFCKeditor.Value	= 'jyu' ;
+				oFCKeditor.ToolbarSet = "bbs"; // 提定工具栏的功能项配置，默认是Default
+				
+				// oFCKeditor.Create() ; // 创建FCKeditor并在当前位置显示出来。
+				oFCKeditor.ReplaceTextarea(); // 替换指定的textarea为FCKeditor
+			</script>
+
+			<br><input type="submit" value="提交">
+		</form>
+
+
+
+		<hr>
+		<a href="#">return</a>
+
+	</body>
+</html>

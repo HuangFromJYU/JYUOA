@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.oa.domain">
+
+	<class name="Topic" table="jyu_topic">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="ipAddr" column="ipAddr"></property>
+		<!-- 内容应是大文本类型，这时要指定length属性！ -->
+		<property name="content" column="content" type="text" length="60000"></property>
+		<!-- 发表时间采用timestamp类型 -->
+		<property name="postTime" column="postTime" type="timestamp"></property>
+		<!-- author属性，表示我与User的多对一关系 -->
+		<many-to-one name="author" class="User" column="authorId"></many-to-one>		
+		
+		
+		<property name="title" column="title"></property>
+		<property name="type" column="type"></property>
+		<property name="replyCount" column="replyCount"></property>
+		<property name="lastUpdateTime" column="lastUpdateTime" type="timestamp"></property>
+
+
+		<!-- forum属性，表示我与Forum的多对一关系 -->
+		<many-to-one name="forum" class="Forum" column="forumId"></many-to-one>
+
+
+		<!-- replies属性，表示我与Reply的一对多关系 -->
+		<set name="replies">
+			<key column="topicId"></key>
+			<one-to-many class="Reply"/>
+		</set>
+		
+		
+		<!-- lastReply属性，表示我与Reply的一对一关系。
+			采用基于外键的映射方式，本方有外键。
+		 -->
+		<many-to-one name="lastReply" class="Reply" column="lastReplyId" unique="true"></many-to-one>
+		
+		
+	</class>
+
+</hibernate-mapping>

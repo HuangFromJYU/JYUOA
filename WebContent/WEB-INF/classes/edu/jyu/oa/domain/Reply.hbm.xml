@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.oa.domain">
+
+	<class name="Reply" table="jyu_reply">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="ipAddr" column="ipAddr"></property>
+		<!-- 内容应是大文本类型，这时要指定length属性！ -->
+		<property name="content" column="content" type="text" length="60000"></property>
+		<!-- 发表时间采用timestamp类型 -->
+		<property name="postTime" column="postTime" type="timestamp"></property>
+		<!-- author属性，表示我与User的多对一关系 -->
+		<many-to-one name="author" class="User" column="authorId"></many-to-one>		
+		
+		<property name="deleted" column="deleted"></property>
+		
+		
+		<!-- topic属性，表示我与Topic 的多对一关系 -->
+		<many-to-one name="topic" class="Topic" column="topicId"></many-to-one>
+
+
+	</class>
+
+</hibernate-mapping>

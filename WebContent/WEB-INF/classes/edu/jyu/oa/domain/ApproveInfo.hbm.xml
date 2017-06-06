@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.oa.domain">
+
+	<class name="ApproveInfo" table="jyu_approveInfo">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="approveTime" column="approveTime" type="timestamp"></property>
+		<property name="approval" column="approval"></property>
+		<property name="comment" column="comment"></property>
+		
+		
+		<!-- application属性，表示我与Application的多对一 -->
+		<many-to-one name="application" class="Application" column="applicationId"></many-to-one>
+		
+		
+		<!-- approver属性，表示我与User的多对一 -->
+		<many-to-one name="approver" class="User" column="approverId"></many-to-one>
+		
+		
+	</class>
+	
+</hibernate-mapping>

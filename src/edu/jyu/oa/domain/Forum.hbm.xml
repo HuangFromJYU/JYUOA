@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="edu.jyu.oa.domain">
+
+	<class name="Forum" table="jyu_forum">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="name" column="name"></property>
+		<property name="description" column="description"></property>
+		<property name="position" column="position"></property>
+
+		<property name="topicCount" column="topicCount"></property>
+		<property name="articleCount" column="articleCount"></property>
+
+
+		<!-- topics属性，表示我与Topic的一对多关系 -->
+		<set name="topics">
+			<key column="forumId"></key>
+			<one-to-many class="Topic" />
+		</set>
+
+
+		<!-- lastTopic属性，表示我与Topic的一对一关系
+			采用基于外键的一对一映射。本方有外键。
+		 -->
+		<many-to-one name="lastTopic" class="Topic" column="lastTopicId" unique="true"></many-to-one>
+
+
+	</class>
+
+</hibernate-mapping>
