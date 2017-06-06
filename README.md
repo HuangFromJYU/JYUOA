@@ -8,8 +8,11 @@ OA是Office Automation的缩写，本意为利用技术的手段提高办公的�
 
 ![](http://img.blog.csdn.net/20170606220944139?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVGltSGVhdGg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
+而JYUOA只是实现了其中很小的一部分功能，不够这样也够呛了，也需要具备很多知识的了，在后面我会介绍一下它的整体架构和里面的功能。下面是项目的主页
 
-而JYUOA只是实现了其中很小的一部分功能，不够这样也够呛了，也需要具备很多知识的了，在后面我会介绍一下它的整体架构和里面的功能。
+![](http://img.blog.csdn.net/20170606223345297?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVGltSGVhdGg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+
 
 # 项目整体架构
 一般这个时候就要扯到三层架构和MVC模式了，不管很多人都这两个其实会搞混，说不出个所以然来，这里我强烈建议你去看看[对三层和MVC的认识过程](http://blog.csdn.net/timheath/article/details/72887267)。
