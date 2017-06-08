@@ -49,15 +49,15 @@ OA是Office Automation的缩写，本意为利用技术的手段提高办公的�
 
 - 源码文件夹
 
-src：项目源代码
-conf：配置文件
-test：单元测试
+1. src：项目源代码
+2. conf：配置文件
+3. test：单元测试
 
 - WebContent文件夹下
 
-script：JavaScript脚本文件
-style：CSS样式文件
-WEB-INF/jsp：jsp页面文件（再创建子文件夹分类存放）
+1. script：JavaScript脚本文件
+2. style：CSS样式文件
+3. WEB-INF/jsp：jsp页面文件（再创建子文件夹分类存放）
 
 **包结构**
 
