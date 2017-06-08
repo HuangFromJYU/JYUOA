@@ -8,18 +8,18 @@ OA是Office Automation的缩写，本意为利用技术的手段提高办公的�
 
 ![](http://img.blog.csdn.net/20170606220944139?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVGltSGVhdGg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-而JYUOA只是实现了其中很小的一部分功能，不够这样也够呛了，也需要具备很多知识的了，在后面我会介绍一下它的整体架构和里面的功能。下面是项目的主页
+而JYUOA只是实现了其中很小的一部分功能，不过这样也够呛了，也需要具备很多知识的了，在后面我会介绍一下它的整体架构和里面的功能。下面是项目的主页
 
 ![](http://img.blog.csdn.net/20170606223345297?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVGltSGVhdGg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 
 
 # 项目整体架构
-一般这个时候就要扯到三层架构和MVC模式了，不管很多人都这两个其实会搞混，说不出个所以然来，这里我强烈建议你去看看[对三层和MVC的认识过程](http://blog.csdn.net/timheath/article/details/72887267)。
+一般这个时候就要扯到三层架构和MVC模式了，不过很多人对这两个其实会搞混，说不出个所以然来，这里我强烈建议你去看看[对三层和MVC的认识过程](http://blog.csdn.net/timheath/article/details/72887267)。
 
 现在回到我们这个项目，这个项目有采用MVC模式，至于三层嘛，其实这个项目最开始用的也是三层，但后来进行重构，直接把业务逻辑层与数据访问层合并了，所以变成了两层，为什么要这么做呢，因为这个项目的业务逻辑并不是特别复杂，普遍都是增删改查操作，这样一来的话业务逻辑层的Service类的方法只是简单地调用一下数据访问层的Dao类的方法，所以干脆把它们整合一起。
 
-还是普遍增删改查的问题还有分页等公共功能，所以把这些普通的功能都抽取出来了，如在界面层（UI）就抽取了`Action`，抽取出来一个`edu.jyu.oa.base.BaseAction`和`edu.jyu.oa.base.ModelDrivenBaseAction<T>`，其中`ModelDrivenBaseAction`继承了`BaseAction`，一个`Action`类如果需要用到Struts2的ModelDriven的话，k就继承`ModelDrivenBaseAction`，否则继承`BaseAction`，例如`edu.jyu.oa.view.action.ProcessDefinitionAction`。
+还是普遍增删改查的问题还有分页等公共功能，所以把这些普通的功能都抽取出来了，如在界面层（UI）就抽取了`Action`，抽取出来一个`edu.jyu.oa.base.BaseAction`和`edu.jyu.oa.base.ModelDrivenBaseAction<T>`，其中`ModelDrivenBaseAction`继承了`BaseAction`，一个`Action`类如果需要用到Struts2的ModelDriven的话，就可以继承`ModelDrivenBaseAction`，否则继承`BaseAction`，例如`edu.jyu.oa.view.action.ProcessDefinitionAction`。
 
 那么就以部门为例，整个项目的层次结构如下图
 
@@ -77,7 +77,7 @@ OA是Office Automation的缩写，本意为利用技术的手段提高办公的�
 ## 系统管理
 
 ### 岗位管理
-这个岗位管理其实可以看作是角色管理了，而角色有什么用呢？角色其实就是用户跟权限中间的一个桥梁，一个用户可以拥有很多权限，但是如果有些用户的所拥有的权限是一样的，那么分别跟这些用户分配权限的话就会很麻烦，所以不如就将权限分配到角色去，然后给用户分配角色，这样子，用户就拥有了角色所拥有的权限。**一个用户可以有多个角色，一个角色可以有多个权限**。如果一个用户没有某一项权限，那么就不会显示那个权限对应的操作给该用户看。
+这个岗位管理其实可以看作是角色管理了，而角色有什么用呢？角色其实就是用户跟权限中间的一个桥梁，一个用户可以拥有很多权限，但是如果有些用户的所拥有的权限是一样的，那么分别给这些用户分配权限的话就会很麻烦，所以不如就将权限分配到角色去，然后给用户分配角色，这样子，用户就拥有了角色所拥有的权限。**一个用户可以有多个角色，一个角色可以有多个权限**。如果一个用户没有某一项权限，那么就不会显示那个权限对应的操作给该用户看。
 
 ![](http://img.blog.csdn.net/20170606221112344?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVGltSGVhdGg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
